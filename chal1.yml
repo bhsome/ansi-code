@@ -1,0 +1,50 @@
+---
+- hosts: localhost
+  tasks:
+  - name: print working directory
+    shell:
+      "pwd >> ./output.txt"
+
+  - name: list files
+    shell:
+      "ls >> ./output.txt"
+
+  - name: make dir practice
+    shell:
+      "mkdir practice"
+
+  - name: change dir to practice
+    shell:
+      "cd practice"
+
+  - name: make dir test
+    shell:
+      "mkdir ./practice/test"
+
+  - name: create files
+    shell:
+      "touch file1 file2 file3 file4 file5"
+
+  - name: list contents
+    shell:
+      "ls >> ./output.txt"
+
+  - name: writing to file1
+    shell:
+      "echo 'this is going to change the file1 for the ansible challange' > file1"    
+
+  - name: Determine which file is the largest
+    shell:
+      "ls -lS >> ./output.txt"
+
+  - name: Determine when file1 was last modified
+    shell:
+      "ls -l ./file1 >> ./output.txt"
+
+  - name: Determine when file1 was last accessed
+    shell:
+      "ls -lu ./file1 >> ./output.txt"
+
+  - name: date
+    shell:
+      "date >> ./output.txt"
